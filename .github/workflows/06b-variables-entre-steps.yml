@@ -10,4 +10,4 @@ jobs:
       - name: Generar número aleatorio
         run: echo "NUM_ALEATORIO=$((1 + RANDOM % 6))" >> "$GITHUB_ENV"
       - name: Leer número aleatorio
-        run: echo "Este es el número: $NUM_ALEATORIO"
+        run: echo "Este es el número ${{env.NUM_ALEATORIO}}"
