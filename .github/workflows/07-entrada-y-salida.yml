@@ -1,7 +1,5 @@
 name: 07a - Entrada y salida
 on:
-  push:
-    branches: [ "main" ]
   workflow_dispatch:
     inputs:
       numero-dados:
