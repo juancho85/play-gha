@@ -9,5 +9,7 @@ jobs:
     steps:
       - name: Generar número aleatorio
         run: echo "NUM_ALEATORIO=$((1 + RANDOM % 6))" >> "$GITHUB_ENV"
-      - name: Leer número aleatorio
-        run: echo "Este es el número ${{env.NUM_ALEATORIO}}"
+      - name: Escribir Resumen
+        run: |
+         echo "# :game_die: El resultado es:" >> $GITHUB_STEP_SUMMARY
+         echo ${{env.NUM_ALEATORIO}} >> $GITHUB_STEP_SUMMARY
