@@ -1,4 +1,4 @@
-name: 02 - Eventos issue
+name: 02b - Eventos issue
 on: issues
 jobs:
   hola-mundo:

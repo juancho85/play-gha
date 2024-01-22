@@ -1,0 +1,15 @@
+name: 02c - Eventos issue opened
+on:
+  issues:
+    types: [opened]
+  push:
+    branches:
+			- main
+    paths-ignore: # no construimos si solo cambiamos el readme
+        - '*.md'
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hola issue
+        run: echo "¡Hola Issue!"
