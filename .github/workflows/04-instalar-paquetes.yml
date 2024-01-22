@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Check node version
         run: node --version
+      - name: List processes
+        run: ps aux
       - name: Install tree tool
         run: |
           sudo apt-get update
