@@ -1,0 +1,13 @@
+name: 06b - Pasar valores entre steps
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generar número aleatorio
+        run: echo "NUM_ALEATORIO=$((1 + RANDOM % 6))" >> "$GITHUB_ENV"
+      - name: Leer número aleatorio
+        run: echo "Este es el número: $NUM_ALEATORIO"
