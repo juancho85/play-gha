@@ -1,0 +1,8 @@
+name: 02 - Eventos issue
+on: issue
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hola issue
+        run: echo "¡Hola Issue!"

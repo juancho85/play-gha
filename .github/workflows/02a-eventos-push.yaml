@@ -1,4 +1,4 @@
-name: 01 - Hola mundo
+name: 02a - Eventos push
 on: push
 jobs:
   hola-mundo:
