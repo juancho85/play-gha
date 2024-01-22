@@ -4,7 +4,7 @@ on:
     types: [opened]
   push:
     branches:
-		  - main
+      - main
     paths-ignore: # no construimos si solo cambiamos el readme
       - '*.md'
 jobs:
