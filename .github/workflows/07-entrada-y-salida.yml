@@ -18,6 +18,8 @@ jobs:
       dado2: ${{ steps.dado2.outputs.dado2 }}
     runs-on: ubuntu-latest
     steps:
+      - name: ¿Cuántos dados?
+        run: echo "Hay ${{inputs.numero-dados}} dados"
       - name: Generar Dado 1
         id: dado1
         run: echo "dado1=$((1 + RANDOM % 6))" >> "$GITHUB_OUTPUT"
