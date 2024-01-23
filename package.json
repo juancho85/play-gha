@@ -4,7 +4,7 @@
     "description": "Roll dice!",
     "main": "index.js",
     "scripts": {
-        "test": "jest"
+        "test": "jest --coverage"
     },
     "repository": {
         "type": "git",
