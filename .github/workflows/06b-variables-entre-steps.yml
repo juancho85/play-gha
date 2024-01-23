@@ -12,7 +12,7 @@ jobs:
       # Escapar : usando format
       # - name: Leer resultado
       #   run:  echo ${{format('El valor del dado es{0} {1}', ':', env.NUM_ALEATORIO)}}
-      #  Escapar : usando multilínea
+      #  Escapar : usando cadena de texto multilínea
       - name: Leer resultado
         run: |
-          echo "El valor del resultado es: ${{ env.NUM_ALEATORIO }}"
+          echo "El valor del dado es: ${{ env.NUM_ALEATORIO }}"
