@@ -4,7 +4,7 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
-  build:
+  cache:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,5 +17,9 @@ jobs:
         with:
           path: ~/.npm
           key: ${{ runner.os }}-npm-${{ hashFiles('**package-lock.json') }}
-      - run: npm ci
+      - name: Instalar dependencias
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Lanzar pruebas
+        run: npm test
 
