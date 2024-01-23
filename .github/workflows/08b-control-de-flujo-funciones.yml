@@ -9,7 +9,7 @@ jobs:
       matrix:
         version: [18, 20]
     runs-on: ubuntu-latest
-    #continue-on-error: true
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - name: Setup node environment
@@ -20,8 +20,6 @@ jobs:
       - run: npm test
       - name: Forzar fallo
         run: exit 1
-      # - name: Forzar OK
-      #   run: exit 0
       - name: Todo OK
         if: ${{ success() }}
         run: echo "Se ve si pasos anteriores han ido OK"
