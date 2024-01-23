@@ -4,12 +4,10 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
-  build:
+  tirada-dados:
     runs-on: ubuntu-latest
     steps:
       - name: Generar número aleatorio
         run: echo "NUM_ALEATORIO=$((1 + RANDOM % 6))" >> "$GITHUB_ENV"
-      - name: Escribir Resumen
-        run: |
-         echo "# :game_die: El resultado es:" >> $GITHUB_STEP_SUMMARY
-         echo ${{env.NUM_ALEATORIO}} >> $GITHUB_STEP_SUMMARY
+      - name: Leer resultado
+        run:  echo "El valor del dado es ${{env.NUM_ALEATORIO}}"

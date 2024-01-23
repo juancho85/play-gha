@@ -4,7 +4,7 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
-  build:
+  info-runner:
     runs-on: ubuntu-latest
     steps:
       - name: Verificar OS y arquitectura

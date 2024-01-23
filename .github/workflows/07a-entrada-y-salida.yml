@@ -10,7 +10,7 @@ on:
         default: dos
         description: El número de dados
 jobs:
-  build:
+  tirada-dados:
     outputs:
       dado1: ${{ steps.dado1.outputs.dado1 }}
       dado2: ${{ steps.dado2.outputs.dado2 }}
@@ -25,3 +25,4 @@ jobs:
         if: ${{ inputs.numero-dados == 'dos' }}  
         id: dado2
         run: echo "dado2=$((1 + RANDOM % 6))" >> "$GITHUB_OUTPUT"
+        
