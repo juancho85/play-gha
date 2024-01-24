@@ -19,6 +19,8 @@ jobs:
         run: echo "${{secrets.UN_SECRETO}}"
       - name: Leer repos 1
         run: gh repo list
+      - name: Leer contenido
+        run: gh repo view ${{ github.repository }}
       - name: Generar token
         id: app-token
         uses: actions/create-github-app-token@v1
