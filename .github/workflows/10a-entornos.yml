@@ -5,6 +5,8 @@ on:
   workflow_dispatch:
 jobs:
   entornos:
+    permissions: 
+      contents: read
     runs-on: ubuntu-latest
     environment: prod
     env:
