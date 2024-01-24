@@ -16,8 +16,8 @@ jobs:
         run: echo "${{vars.UNA_VARIABLE}}"
       - name: Verificar secreto
         run: echo "${{secrets.UN_SECRETO}}"
-      # - name: Leer repos 1
-      #   run: gh repo list
+      - name: Leer repos 1
+        run: gh repo list
       - name: Generar token
         id: app-token
         uses: actions/create-github-app-token@v1
