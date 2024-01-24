@@ -14,8 +14,8 @@ jobs:
         run: gh issue list --state all --repo ${{ github.repository }}
       - name: Leer repos 1
         run: gh repo list
-      - name: Leer repos 1
-        run: gh pr list
+      - name: Leer PRs
+        run: gh pr list --state all --repo ${{ github.repository }}
         
       # - name: Generar token
       #   id: app-token
