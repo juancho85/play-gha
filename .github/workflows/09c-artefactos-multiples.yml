@@ -28,8 +28,8 @@ jobs:
           name: dados
       - name: Escribir resumen
         run: |
-          echo ":dice: Resultados de los dados :dice:"
-          echo "Dado 1": && cat dado1.txt >> $GITHUB_STEP_SUMMARY
-          echo "Dado 2": && cat dado2.txt >> $GITHUB_STEP_SUMMARY
+          echo "# :game_die: Resultado de los dados :game_die:" >> $GITHUB_STEP_SUMMARY
+          echo "Dado 1: $(cat dado1.txt)"  >> $GITHUB_STEP_SUMMARY
+          echo "Dado 2: $(cat dado2.txt)" >> $GITHUB_STEP_SUMMARY
 
 
