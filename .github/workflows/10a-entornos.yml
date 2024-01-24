@@ -7,6 +7,7 @@ jobs:
   entornos:
     # permissions: 
     #   contents: read
+    permissions: {}
     runs-on: ubuntu-latest
     environment: prod
     env:
@@ -24,7 +25,7 @@ jobs:
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
-          # owner: juancho85
+          owner: juancho85
       - name: Leer repos 2
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
