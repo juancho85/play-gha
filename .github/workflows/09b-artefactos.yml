@@ -34,7 +34,7 @@ jobs:
         run: ls -R
       - name: HTML a Markdown
         id: html2markdown
-        uses: rknj/html2markdown@v0.1.0
+        uses: rknj/html2markdown@b8edf4ce2aa1309ec7228191634df9b4760d4b07
         with:
           html-file: "lcov-report/index.html"
       - name: Escribe resumen
