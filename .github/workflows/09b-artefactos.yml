@@ -32,14 +32,14 @@ jobs:
           name: reporte-cobertura
       - name: Mostrar la estructura de los ficheros descargados
         run: ls -R
-      - name: HTML Preview
-        id: html_preview
-        uses: pavi2410/html-preview-action@v2
+      - name: HTML a Markdown
+        id: html2markdown
+        uses: rknj/html2markdown@v0.1.0
         with:
-          html_file: 'lcov-report/index.html'
+          html-file: "lcov-report/index.html"
       - name: Escribe resumen
         run: |
           echo "# Reporte de cobertura" >> $GITHUB_STEP_SUMMARY
-          cat lcov-report/index.html >> $GITHUB_STEP_SUMMARY
+          cat ${{ steps.html2markdown.outputs.markdown-content }} >> $GITHUB_STEP_SUMMARY
 
 
