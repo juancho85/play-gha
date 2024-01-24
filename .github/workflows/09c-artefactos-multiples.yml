@@ -1,0 +1,38 @@
+name: 09c - cachear multiples artefactos
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Asignar versión de node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Lanzar pruebas
+        run: npm test
+      - name: Archivar reporte de cobertura
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-cobertura
+          path: |
+            coverage/lcov-report/*.html
+            coverage/*.xml
+            coverage/*.info
+  resumen:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Descargar reporte de cobertura
+        uses: actions/download-artifact@v4
+        with:
+          name: reporte-cobertura
+      - name: Mostrar la estructura de los ficheros descargados
+        run: ls -R
+
+
