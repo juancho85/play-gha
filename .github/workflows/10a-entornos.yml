@@ -7,6 +7,8 @@ jobs:
   entornos:
     runs-on: ubuntu-latest
     environment: prod
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - name: Verificar variable
         run: echo "${{vars.UNA_VARIABLE}}"
