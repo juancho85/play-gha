@@ -12,3 +12,5 @@ jobs:
         run: echo "${{vars.UNA_VARIABLE}}"
       - name: Verificar secreto
         run: echo "${{secrets.UN_SECRETO}}"
+      - name: Leer repos
+        run: gh repo list
