@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: prod
     env:
-      GH_TOKEN: ${{ github.token }}
+      # GH_TOKEN: ${{ github.token }}
+      GITHUB_TOKEN: ${{ secrets.APP_TOKEN }}
     steps:
       - name: Verificar variable
         run: echo "${{vars.UNA_VARIABLE}}"
@@ -18,7 +19,7 @@ jobs:
         run: echo "${{secrets.UN_SECRETO}}"
       - name: Leer repos 1
         run: gh repo list
-      - name: Autenticación
-        run: gh auth login --with-token ${{ secrets.APP_TOKEN }}
+      # - name: Autenticación
+      #   run: gh auth login --with-token ${{ secrets.APP_TOKEN }}
       - name: Leer repos 2
         run: gh repo list
