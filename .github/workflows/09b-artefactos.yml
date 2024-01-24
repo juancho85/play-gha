@@ -35,6 +35,6 @@ jobs:
       - name: Escribe resumen
         run: |
           echo "# Reporte de cobertura" >> $GITHUB_STEP_SUMMARY
-          cat coverage/**/index.html >> $GITHUB_STEP_SUMMARY
+          cat lcov-report/index.html >> $GITHUB_STEP_SUMMARY
 
 
