@@ -3,11 +3,11 @@ on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
+permissions: {}
 jobs:
   entornos:
     # permissions: 
     #   contents: read
-    permissions: {}
     runs-on: ubuntu-latest
     environment: prod
     env:
