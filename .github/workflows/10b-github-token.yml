@@ -3,11 +3,11 @@ on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
-permissions: {}
 jobs:
   permisos:
     runs-on: ubuntu-latest
-    permissions: {}
+    permissions:
+      issues: none
     env:
       # GITHUB_TOKEN: ${{ github.token }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
