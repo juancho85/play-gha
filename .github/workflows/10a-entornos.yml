@@ -22,7 +22,7 @@ jobs:
       - name: Leer contenido
         run: gh repo view ${{ github.repository }}
       - name: Listar issues
-        run: issue list --state all
+        run: gh issue list --state all
       # - name: Generar token
       #   id: app-token
       #   uses: actions/create-github-app-token@v1
