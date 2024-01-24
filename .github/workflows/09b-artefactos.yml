@@ -1,0 +1,31 @@
+name: 09b - artefactos
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Asignar versión de node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Instalar dependencias
+        run: npm ci
+      - name: Lanzar pruebas
+        run: npm test
+      - name: Archivar reporte de cobertura
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-cobertura
+          path: |
+            coverage/**/index.html
+  # summary:
+  #   runs-on: ubuntu-latest
+  #   needs: test
+  #   steps:
+  #     - name: Descargar reporte de cobertura
+  #       uses: actions/download-artifact@v4
+
