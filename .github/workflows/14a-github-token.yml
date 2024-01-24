@@ -6,7 +6,7 @@ on:
 jobs:
   permisos:
     runs-on: ubuntu-latest
-    permissions:
+    permissions: # TODO: Averiguar por qué no restringe listar las issues
       issues: none
       contents: read
     env:
