@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions: {}
     env:
-      GH_TOKEN: ${{ github.token }}
+      GITHUB_TOKEN: ${{ github.token }}
+      # GH_TOKEN: ${{ github.token }}
     steps:
       - name: Listar issues
         run: gh issue list --state all --repo ${{ github.repository }}
