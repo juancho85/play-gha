@@ -3,11 +3,8 @@ on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
-permissions: {}
 jobs:
   entornos:
-    # permissions: 
-    #   contents: read
     runs-on: ubuntu-latest
     environment: prod
     env:
@@ -17,18 +14,3 @@ jobs:
         run: echo "${{vars.UNA_VARIABLE}}"
       - name: Verificar secreto
         run: echo "${{secrets.UN_SECRETO}}"
-      - name: Listar issues
-        run: gh issue list --state all --repo ${{ github.repository }}
-      - name: Leer repos 1
-        run: gh repo list
-      # - name: Generar token
-      #   id: app-token
-      #   uses: actions/create-github-app-token@v1
-      #   with:
-      #     app-id: ${{ vars.APP_ID }}
-      #     private-key: ${{ secrets.PRIVATE_KEY }}
-      #     owner: juancho85
-      # - name: Leer repos 2
-      #   env:
-      #     GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-      #   run: gh repo list
