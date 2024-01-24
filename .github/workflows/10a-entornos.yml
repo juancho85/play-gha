@@ -9,8 +9,8 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     environment: prod
-    # env:
-    #   GITHUB_TOKEN: ${{ github.token }}
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
     steps:
       - name: Verificar variable
         run: echo "${{vars.UNA_VARIABLE}}"
