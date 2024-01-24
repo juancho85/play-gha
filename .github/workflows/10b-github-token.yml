@@ -10,13 +10,13 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ github.token }}
     steps:
-      
-      - name: Listar permisos
-        run: gh api -i user
       - name: Listar issues
         run: gh issue list --state all --repo ${{ github.repository }}
       - name: Leer repos 1
         run: gh repo list
+      - name: Leer repos 1
+        run: gh pr list
+        
       # - name: Generar token
       #   id: app-token
       #   uses: actions/create-github-app-token@v1
