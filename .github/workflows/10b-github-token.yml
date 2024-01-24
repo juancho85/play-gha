@@ -6,6 +6,7 @@ on:
 jobs:
   permisos:
     runs-on: ubuntu-latest
+    permissions: {}
     env:
       GITHUB_TOKEN: ${{ github.token }}
     steps:
