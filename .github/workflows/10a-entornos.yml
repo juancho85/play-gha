@@ -18,4 +18,4 @@ jobs:
       - name: Verificar secreto
         run: echo "${{secrets.UN_SECRETO}}"
       - name: Leer repos
-        run: gh repo list
+        run: gh auth login --with-token ${{ secrets.APP_TOKEN }} && gh repo list
