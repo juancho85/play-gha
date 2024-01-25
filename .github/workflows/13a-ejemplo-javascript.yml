@@ -9,7 +9,7 @@ jobs:
     name: Uso acción javascript
     steps:
       - id: compuesta
-        uses: juancho85/gha-javascript-dice@v1.1
+        uses: juancho85/gha-javascript-dice@v1
         with:
           numero-dados: 'dos'
       - run: echo dado 1 es ${{steps.compuesta.outputs.dado1}}
