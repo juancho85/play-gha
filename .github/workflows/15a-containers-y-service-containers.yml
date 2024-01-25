@@ -1,0 +1,18 @@
+name: 15a - Containers y service containers
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  uso-compuesto:
+    name: Uso contenedores
+    runs-on: ubuntu-latest
+    container: node:16-bullseye
+    services:
+      redis:
+        image: redis
+    steps:
+      - uses: actions/checkout@v3
+      - name: run node
+        run: node script.js
+        
