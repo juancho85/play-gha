@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Uso acción javascript
     steps:
-      - id: compuesta
+      - id: javascript
         uses: juancho85/gha-javascript-hola@v1
         with:
           nombre: 'Juan'
       - name: El saludo
-        run: echo "${{steps.compuesta.outputs.saludo}}"
+        run: echo "${{steps.javascript.outputs.saludo}}"
