@@ -11,5 +11,5 @@ jobs:
       - id: compuesta
         uses: juancho85/gha-composite-action@v1
         with:
-          who-to-greet: 'Mona the Octocat'
+          numero-dados: 'uno'
       - run: echo dado 1 es ${{steps.compuesta.outputs.dado1}} 
