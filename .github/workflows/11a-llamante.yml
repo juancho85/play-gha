@@ -7,7 +7,7 @@ jobs:
   tirada-dados:
     uses: ./.github/workflows/11a-llamado.yml
     with:
-      numero-dados: dos
+      numero-dados: uno
   resumen:
     runs-on: ubuntu-latest
     needs: tirada-dados
