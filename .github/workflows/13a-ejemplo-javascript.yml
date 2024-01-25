@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Uso acción javascript
     steps:
-      - id: compuesta
+      - id: javascript
         uses: juancho85/gha-javascript-dice@v1
         with:
           numero-dados: 'dos'
-      - run: echo dado 1 es ${{steps.compuesta.outputs.dado1}}
-      - run: echo dado 2 es ${{steps.compuesta.outputs.dado2}}
+      - run: echo dado 1 es ${{steps.javascript.outputs.dado1}}
+      - run: echo dado 2 es ${{steps.javascript.outputs.dado2}}
