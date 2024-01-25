@@ -1,5 +1,5 @@
 
-name: Ejemplo de workflow reutilizable
+name: 11a[llamado] - Ejemplo de workflow reutilizable
 on:
   workflow_call:
     inputs:

@@ -1,4 +1,4 @@
-name: 12b - Ejercicio de workflow reutilizable
+name: 11b[llamante] - Ejercicio de workflow reutilizable
 on:
   push:
     branches: [ "main" ]
