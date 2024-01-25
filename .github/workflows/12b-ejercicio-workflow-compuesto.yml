@@ -1,0 +1,14 @@
+name: 12b - Ejercicio de workflow reutilizable
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  uso-compuesto:
+    runs-on: ubuntu-latest
+    name: Npm build test
+    steps:
+      - id: compuesta
+        uses: juancho85/gha-npm-composite-action@v1
+        with:
+          version-node: 20
