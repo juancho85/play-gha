@@ -1,9 +1,0 @@
-name: Manual workflow
-on:
-  workflow_dispatch:
-jobs:
-  greet:
-    runs-on: macos-latest
-    steps:
-    - name: Send greeting
-      run: echo "Hello Mundo"

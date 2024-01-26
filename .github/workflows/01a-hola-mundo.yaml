@@ -1,4 +1,4 @@
-name: 01 - Hola mundo
+name: 01a - Hola mundo
 on: workflow_dispatch
 jobs:
   hola-mundo:
