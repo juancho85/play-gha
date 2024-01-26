@@ -1,0 +1,23 @@
+name: Events Demo 1
+on:
+  workflow_dispatch:
+  schedule:
+      - cron:  '* * 1 * *'
+  pull_request:
+    branches:
+      - main
+      - 'release/**'
+    types:
+      - opened
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/workflows/*'
+  
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Hola mundo
+      run: echo "¡Hola Mundo!"
