@@ -24,5 +24,7 @@ jobs:
          echo "Lanzado por: ${{ github.actor }}"
       # - name: Filtro de objeto
       #   run: echo "${{ fromJson(env.frutas.*.name) }}"
+      # - name: Filtro de objeto
+      #   run: echo "${{ join(toJson(env.frutas).*.name, ',') }}"
       - name: Filtro de objeto
-        run: echo "${{ join(toJson(env.frutas).*.name, ',') }}"
+        run: echo "${{ join(env.frutas.*.name, ',') }}"
