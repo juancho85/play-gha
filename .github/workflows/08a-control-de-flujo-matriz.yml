@@ -11,9 +11,9 @@ jobs:
         os: [ubuntu-22.04, ubuntu-20.04]
         version: [18, 20]
         # 3) Include / Exclude
-        exclude:
-          - os: ubuntu-22.04
-            version: 20
+        # exclude:
+        #   - os: ubuntu-22.04
+        #     version: 20
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -21,9 +21,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.version }}
-      - if: matrix.os == 'ubuntu-22.04' && matrix.version == 20
-        continue-on-error: true # 2) Continue on error
-        run: exit 1
+      # - if: matrix.os == 'ubuntu-22.04' && matrix.version == 20
+      #   continue-on-error: true # 2) Continue on error
+      #   run: exit 1
       - run: npm ci
       - run: npm test
   deploy:
