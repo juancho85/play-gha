@@ -16,4 +16,4 @@ jobs:
          echo "Evento disparador: ${{ github.event_name }}"
          echo "Lanzado por: ${{ github.actor }}"
       - name: Filtro de objeto
-        run: echo "${{ steps.*.name }}"
+        run: echo "${{ toJson(steps.*.name) }}"
