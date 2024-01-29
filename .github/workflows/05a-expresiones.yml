@@ -7,14 +7,12 @@ jobs:
   expresiones:
     runs-on: ubuntu-latest
     env:
-      compra: |
-        {
-          frutas: [
-            { "name": "manzana", "cantidad": 1 },
-            { "name": "naranja", "cantidad": 2 },
-            { "name": "pera", "cantidad": 1 }
-          ]
-        }
+      frutas: |
+        [
+          { "name": "manzana", "cantidad": 1 },
+          { "name": "naranja", "cantidad": 2 },
+          { "name": "pera", "cantidad": 1 }
+        ]
     steps:
       - name: Operadores
         run: echo "${{ 2 > 1 }}"
@@ -27,4 +25,4 @@ jobs:
       # - name: Filtro de objeto
       #   run: echo "${{ fromJson(env.frutas.*.name) }}"
       - name: Filtro de objeto
-        run: echo "${{ join(toJson(env.compra).frutas.*.name, ',') }}"
+        run: echo "${{ join(toJson(env.frutas).*.name, ',') }}"
