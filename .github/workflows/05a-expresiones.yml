@@ -19,4 +19,4 @@ jobs:
          echo "Evento disparador: ${{ github.event_name }}"
          echo "Lanzado por: ${{ github.actor }}"
       - name: Filtro de objeto
-        run: echo "${{  join(fromJson(steps.*.conclusion), ',') }}"
+        run: echo "${{  join(steps.*.conclusion, ',') }}"
