@@ -29,4 +29,4 @@ jobs:
       # - name: Filtro de objeto
       #   run: echo "${{ join(env.frutas.*.name, ',') }}"
       - name: Filtro de objeto
-        run: echo "${{ toJson(env.frutas) }}"
+        run: echo "${{ toJson(env.frutas).* }}"
