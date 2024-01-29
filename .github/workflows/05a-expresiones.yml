@@ -9,9 +9,9 @@ jobs:
     env:
       frutas: |
         [
-          { "name": "apple", "quantity": 1 },
-          { "name": "orange", "quantity": 2 },
-          { "name": "pear", "quantity": 1 }
+          { "name": "manzana", "cantidad": 1 },
+          { "name": "naranja", "cantidad": 2 },
+          { "name": "pera", "cantidad": 1 }
         ]
     steps:
       - name: Operadores
@@ -22,5 +22,7 @@ jobs:
         run: |
          echo "Evento disparador: ${{ github.event_name }}"
          echo "Lanzado por: ${{ github.actor }}"
+      # - name: Filtro de objeto
+      #   run: echo "${{ fromJson(env.frutas.*.name) }}"
       - name: Filtro de objeto
-        run: echo "${{ fromJson(env.frutas.*.name) }}"
+        run: echo "${{ join(env.frutas.*.name, ',') }}"
