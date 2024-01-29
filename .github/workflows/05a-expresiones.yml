@@ -6,27 +6,17 @@ on:
 jobs:
   expresiones:
     runs-on: ubuntu-latest
-    env:
-      frutas: |
-        [
-          {"name":"manzana","cantidad":1},
-          {"name":"naranja","cantidad":2},
-          {"name":"pera","cantidad":1}
-        ]
     steps:
       - name: Operadores
+        id: operadores
         run: echo "${{ 2 > 1 }}"
       - name: Verificar context
+        id: verificarContextos
         run: echo "${{ toJSON(github) }}"
       - name: Evento y actor
+        id: eventoActor
         run: |
          echo "Evento disparador: ${{ github.event_name }}"
          echo "Lanzado por: ${{ github.actor }}"
-      # - name: Filtro de objeto
-      #   run: echo "${{ fromJson(env.frutas.*.name) }}"
-      # - name: Filtro de objeto
-      #   run: echo "${{ join(toJson(env.frutas).*.name, ',') }}"
-      # - name: Filtro de objeto
-      #   run: echo "${{ join(env.frutas.*.name, ',') }}"
       - name: Filtro de objeto
-        run: echo "${{  fromJson(toJson(env.frutas).*.name) }}"
+        run: echo "${{  join(fromJson(steps.*.conclusion), ',') }}"
