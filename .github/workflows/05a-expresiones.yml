@@ -7,9 +7,13 @@ jobs:
   expresiones:
     runs-on: ubuntu-latest
     steps:
+      - name: Operadores
+        run: echo "${{ 2 > 1 }}"
       - name: Verificar context
         run: echo "${{ toJSON(github) }}"
       - name: Evento y actor
         run: |
          echo "Evento disparador: ${{ github.event_name }}"
          echo "Lanzado por: ${{ github.actor }}"
+      - name: Filtro de objeto
+        run: echo "${{ github.event.commits.*.committer.name }}"
