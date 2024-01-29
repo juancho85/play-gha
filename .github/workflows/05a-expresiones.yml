@@ -10,13 +10,16 @@ jobs:
       - name: Operadores
         id: operadores
         run: echo "${{ 2 > 1 }}"
-      - name: Verificar context
-        id: verificarContextos
+      - name: Inspeccionar github
+        id: githubContext
         run: echo "${{ toJSON(github) }}"
       - name: Evento y actor
         id: eventoActor
         run: |
          echo "Evento disparador: ${{ github.event_name }}"
          echo "Lanzado por: ${{ github.actor }}"
+      - name: Inspeccionar steps
+        id: stepsContext
+        run: echo "${{ toJSON(steps) }}"
       - name: Filtro de objeto
         run: echo "${{  join(steps.*.conclusion, ',') }}"
