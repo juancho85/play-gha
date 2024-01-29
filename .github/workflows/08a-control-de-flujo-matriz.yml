@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     strategy:
-      # fail-fast: true
+      fail-fast: false # vale true por defecto
       matrix:
         os: [ubuntu-22.04, ubuntu-20.04]
         version: [18, 20]
