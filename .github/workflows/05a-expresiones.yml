@@ -26,5 +26,7 @@ jobs:
       #   run: echo "${{ fromJson(env.frutas.*.name) }}"
       # - name: Filtro de objeto
       #   run: echo "${{ join(toJson(env.frutas).*.name, ',') }}"
+      # - name: Filtro de objeto
+      #   run: echo "${{ join(env.frutas.*.name, ',') }}"
       - name: Filtro de objeto
-        run: echo "${{ join(env.frutas.*.name, ',') }}"
+        run: echo "${{ toJson(env.frutas) }}"
