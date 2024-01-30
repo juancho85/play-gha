@@ -4,10 +4,12 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
-  my_first_job:
+  uso-compuesto:
     runs-on: ubuntu-latest
+    name: Job para probar jobs compuestos
     steps:
-      - name: My first step - check out repository
-        uses: actions/checkout@v4
-      - name: Use local hello-world-action
-        uses: ./.github/actions/hello-world-action
+      - id: compuesta
+        uses: juancho85/gha-composite-action@v1
+        with:
+          numero-dados: 'uno'
+      - run: echo dado 1 es ${{steps.compuesta.outputs.dado1}}
