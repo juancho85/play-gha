@@ -1,0 +1,15 @@
+name: 15a - Inyección de código
+on:
+  issues: 
+    types:
+      - opened
+jobs:
+  permisos:
+    runs-on: ubuntu-latest
+    # env:
+    #   ISSUE_TITLE: ${{ github.event.issue.title }}
+    steps:
+      - run: |
+          title="${{ github.event.issue.title }}"
+          echo ${title}
+
