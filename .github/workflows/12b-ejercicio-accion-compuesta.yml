@@ -1,4 +1,4 @@
-name: 12b - Ejercicio de workflow reutilizable
+name: 12b - Ejercicio de acción compuesta
 on:
   push:
     branches: [ "main" ]
