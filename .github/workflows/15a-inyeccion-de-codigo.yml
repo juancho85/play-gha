@@ -6,10 +6,13 @@ on:
 jobs:
   permisos:
     runs-on: ubuntu-latest
-    # env:
-    #   ISSUE_TITLE: ${{ github.event.issue.title }}
+    env:
+      ISSUE_TITLE: ${{ github.event.issue.title }} #
     steps:
+      # - run: |
+      #     title="${{ github.event.issue.title }}"
+      #     echo ${title}
       - run: |
-          title="${{ github.event.issue.title }}"
+          title="${{ env.ISSUE_TITLE }}"
           echo ${title}
 
