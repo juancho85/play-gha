@@ -13,6 +13,5 @@ jobs:
       #     title="${{ github.event.issue.title }}"
       #     echo ${title}
       - run: |
-          title="${{ env.ISSUE_TITLE }}"
           echo ${title}
 
