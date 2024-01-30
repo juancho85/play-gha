@@ -1,4 +1,4 @@
-name: 12a - Ejemplo de workflow reutilizable
+name: 12a - Ejemplo de acción compuesta
 on:
   push:
     branches: [ "main" ]
