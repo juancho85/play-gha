@@ -3,13 +3,13 @@ on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
+permissions: 
+    contents: none
 jobs:
-  deploy:
-    name: Upload to Amazon S3
+  permisos:
+    name: Prueba permisos
     runs-on: ubuntu-latest
     # These permissions are needed to interact with GitHub's OIDC Token endpoint.
-    permissions:
-      contents: none
     steps:
     - name: Checkout
       uses: actions/checkout@v3
