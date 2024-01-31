@@ -3,9 +3,10 @@ on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
-permissions: {}
-# permissions:
-#   issues: none
+# permissions: {}
+permissions:
+  contents: read
+  issues: none
 jobs:
   test-permissions:
     name: Test permissions
