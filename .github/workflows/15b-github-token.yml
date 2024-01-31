@@ -11,11 +11,12 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-    - uses: actions/checkout@v4
-    - name: Prueba con GH-CLI
-      run: gh issue list
-    - name: Prueba con llamada HTTP
-      run: |
-        curl https://api.github.com/repos/${{ github.repository }}/issues \
-        -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-        -H 'content-type: application/json'
+    - uses: juancho85/gha-list-issues@v1
+    # - uses: actions/checkout@v4
+    # - name: Prueba con GH-CLI
+    #   run: gh issue list
+    # - name: Prueba con llamada HTTP
+    #   run: |
+    #     curl https://api.github.com/repos/${{ github.repository }}/issues \
+    #     -H 'authorization: Bearer ${{ github.token }}' \
+    #     -H 'content-type: application/json'
