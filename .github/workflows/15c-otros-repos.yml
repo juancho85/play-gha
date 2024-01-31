@@ -17,16 +17,6 @@ jobs:
         owner: ${{ github.repository_owner }}
     - name: List repos
       env:
-        # GH_TOKEN: ${{ github.token }}
-        GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        GH_TOKEN: ${{ github.token }}
+        # GH_TOKEN: ${{ steps.app-token.outputs.token }}
       run: gh repo list ${{ github.repository_owner }} --visibility private
-    - name: Repo propio
-      env:
-        # GH_TOKEN: ${{ github.token }}
-        GH_TOKEN: ${{ steps.app-token.outputs.token }}
-      run: gh repo view ${{ github.repository }}    
-    - name: Repo ajeno
-      env:
-        # GH_TOKEN: ${{ github.token }}
-        GH_TOKEN: ${{ steps.app-token.outputs.token }}
-      run: gh repo view ${{ github.repository_owner }}/cv
