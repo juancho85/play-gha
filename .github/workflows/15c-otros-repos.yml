@@ -16,11 +16,11 @@ jobs:
         private-key: ${{ secrets.PRIVATE_KEY }}
     - name: Repo propio
       env:
-        # GH_TOKEN: ${{ github.token }}
-        GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        GH_TOKEN: ${{ github.token }}
+        # GH_TOKEN: ${{ steps.app-token.outputs.token }}
       run: gh repo view ${{ github.repository }}    
     - name: Repo ajeno
       env:
-        # GH_TOKEN: ${{ github.token }}
-        GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        GH_TOKEN: ${{ github.token }}
+        # GH_TOKEN: ${{ steps.app-token.outputs.token }}
       run: gh repo view ${{ github.repository_owner }}/cv
