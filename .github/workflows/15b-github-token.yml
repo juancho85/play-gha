@@ -8,5 +8,7 @@ jobs:
   permisos:
     name: Prueba permisos
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
     - run: gh issue list
