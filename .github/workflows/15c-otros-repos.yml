@@ -14,8 +14,9 @@ jobs:
       with:
         app-id: ${{ vars.APP_ID }}
         private-key: ${{ secrets.PRIVATE_KEY }}
+    - run: echo "${{ steps.app-token.outputs.token }}" | base64
     - name: listar repos
       env:
-        GH_TOKEN: ${{ github.token }}
-        # GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        # GH_TOKEN: ${{ github.token }}
+        GH_TOKEN: ${{ steps.app-token.outputs.token }}
       run: gh repo list ${{ github.repository_owner }} --visibility private
