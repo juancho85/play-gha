@@ -6,7 +6,7 @@ on:
 # permissions: {}
 permissions:
   contents: read
-  issues: none
+  issues: read
 jobs:
   test-permissions:
     name: Test permissions
