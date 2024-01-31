@@ -4,9 +4,9 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 # permissions: {}
-permissions:
-  contents: read
-  issues: read
+# permissions:
+#   contents: read
+#   issues: read
 jobs:
   test-permissions:
     name: Test permissions
