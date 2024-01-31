@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - run: cat .git/config
     - name: Retrieve issues via github cli
       shell: bash
       env:
