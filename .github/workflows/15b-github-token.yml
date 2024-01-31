@@ -4,19 +4,22 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 permissions: {}
+# permissions:
+#   issues: none
 jobs:
-  permisos:
-    name: Prueba permisos
+  test-permissions:
+    name: Test permissions
     runs-on: ubuntu-latest
-    # env:
-    #   GH_TOKEN: ${{ github.token }}
     steps:
-    - uses: juancho85/gha-list-issues@v1
-    # - uses: actions/checkout@v4
-    # - name: Prueba con GH-CLI
-    #   run: gh issue list
-    # - name: Prueba con llamada HTTP
-    #   run: |
-    #     curl https://api.github.com/repos/${{ github.repository }}/issues \
-    #     -H 'authorization: Bearer ${{ github.token }}' \
-    #     -H 'content-type: application/json'
+    - uses: actions/checkout@v4
+    - name: Retrieve issues via github cli
+      shell: bash
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: gh issue list
+    - name: Retrieve issues via HTTP
+      shell: bash
+      run: |
+        curl https://api.github.com/repos/${{ github.repository }}/issues \
+        -H 'authorization: Bearer ${{ github.token }}' \
+        -H 'content-type: application/json'
