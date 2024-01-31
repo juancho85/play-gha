@@ -4,7 +4,7 @@ on:
     types:
       - opened
 jobs:
-  permisos:
+  inyeccion:
     runs-on: ubuntu-latest
     # env:
     #   ISSUE_TITLE: ${{ github.event.issue.title }} #

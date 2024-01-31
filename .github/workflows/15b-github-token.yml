@@ -1,0 +1,16 @@
+name: 15b - Github token
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  deploy:
+    name: Upload to Amazon S3
+    runs-on: ubuntu-latest
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+      contents: none
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - run: cat readme.md
