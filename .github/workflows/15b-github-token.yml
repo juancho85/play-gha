@@ -8,8 +8,8 @@ jobs:
   permisos:
     name: Prueba permisos
     runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ github.token }}
+    # env:
+    #   GH_TOKEN: ${{ github.token }}
     steps:
     - uses: juancho85/gha-list-issues@v1
     # - uses: actions/checkout@v4
