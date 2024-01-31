@@ -5,12 +5,18 @@ on:
   workflow_dispatch:
 jobs:
   listar-repos:
-    name: Test permissions
+    name: Listar repos
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/create-github-app-token@v1
+      id: app-token
+      with:
+        app-id: ${{ vars.APP_ID }}
+        private-key: ${{ secrets.PRIVATE_KEY }}
     - name: listar repos
       shell: bash
       env:
-        GH_TOKEN: ${{ github.token }}
+        # GH_TOKEN: ${{ github.token }}
+        GH_TOKEN: ${{ steps.app-token.outputs.token }}
       run: gh repo list
