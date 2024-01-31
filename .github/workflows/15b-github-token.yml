@@ -8,8 +8,5 @@ jobs:
   permisos:
     name: Prueba permisos
     runs-on: ubuntu-latest
-    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - run: cat readme.md
+    - run: gh issue list
