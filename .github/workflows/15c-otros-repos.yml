@@ -23,5 +23,6 @@ jobs:
     - name: View repos
       env:
         # GH_TOKEN: ${{ github.token }}
+        # GH_TOKEN: ${{ github.token }}
         GH_TOKEN: ${{ steps.app-token.outputs.token }}
       run: gh repo view ${{ github.repository_owner }}/cv
